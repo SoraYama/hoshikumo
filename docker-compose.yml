@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  tomon-bot:
+    build: .
+    image: hoshikumo-bot
+    container_name: 'hoshikumo-bot'
+    ports:
+      - '1551:1551'
+    volumes:
+      - db:/src/db
+      - logs:/src/logs
+volumes:
+  db:
+  logs:
