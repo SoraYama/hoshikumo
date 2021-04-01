@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  tomon-bot:
+  hoshikumo-bot:
     build: .
     image: hoshikumo-bot
     container_name: 'hoshikumo-bot'
@@ -12,4 +12,4 @@ services:
       - log:/src/log
 volumes:
   db:
-  logs:
+  log:
