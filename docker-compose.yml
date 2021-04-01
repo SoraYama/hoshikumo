@@ -9,7 +9,7 @@ services:
       - '1551:1551'
     volumes:
       - db:/src/db
-      - logs:/src/logs
+      - log:/src/log
 volumes:
   db:
   logs:

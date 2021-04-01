@@ -73,38 +73,38 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
-"@octo-bot/core@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@octo-bot/core/-/core-1.0.6.tgz#9f0b3824e9599637f97f04ce92caf5b2efb58e72"
-  integrity sha512-t71bwwhsg1Ti3gy11ZZX8xNoS8U/R/7B6lOYq1hjDi9e1w9p1eL56mFUUAGE8aj01CFnXd9kyZIazRYtOf7fvA==
+"@octo-bot/core@^1.0.7-alpha", "@octo-bot/core@^1.0.7-alpha.0":
+  version "1.0.7-alpha.0"
+  resolved "https://registry.yarnpkg.com/@octo-bot/core/-/core-1.0.7-alpha.0.tgz#b98bdf562a67f78d9e0c69451fa3bbc9f5c571c2"
+  integrity sha512-7a9d+GZmp8XbpvCmw4E2+n3hQbf5GKaLecfrkNdgGjEROvw6sCq7PzyV9vLCIsSjv4ERvrJkFw8BoASAFN2d8g==
   dependencies:
     fs-extra "^9.0.1"
     lodash "^4.17.20"
     log4js "^6.3.0"
     node-cron "^2.0.3"
 
-"@octo-bot/discord-bot@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@octo-bot/discord-bot/-/discord-bot-1.0.6.tgz#64fb4428df2d5d444f5af6022cc3e2d83c5dfc25"
-  integrity sha512-GQMl8dIv/gliK2UQSnt1XOwczYZj9vuPHR+iL/Sw7g2teHDK5ZagHGAb4zbFL+kY9flgiK0SmryG97kFLU5iTQ==
+"@octo-bot/discord-bot@^1.0.7-alpha":
+  version "1.0.7-alpha.0"
+  resolved "https://registry.yarnpkg.com/@octo-bot/discord-bot/-/discord-bot-1.0.7-alpha.0.tgz#3d9c6947db0b63fd4975e38348461cfd607f2670"
+  integrity sha512-t1lA0iTiOz3w/mO+Cf3D5+vgU3oLY3HcOyNKcuPXQYKFt9CtrbKljMHUHvnddQem1cBn87UC0gBRnB/jk9KwpQ==
   dependencies:
-    "@octo-bot/core" "^1.0.6"
+    "@octo-bot/core" "^1.0.7-alpha.0"
     discord.js "^12.5.1"
 
-"@octo-bot/telegram-bot@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@octo-bot/telegram-bot/-/telegram-bot-1.0.6.tgz#b559891c615f44483adfe4f6e465234d72984a21"
-  integrity sha512-j7ohC+YI8jPPNLeqhCxHT672BComszVeYKbXh8uotcs3fu75ZxQ6Ojamyc2+HsKczaFqy2jlTuBCyyxZMeHRcQ==
+"@octo-bot/telegram-bot@^1.0.7-alpha":
+  version "1.0.7-alpha.0"
+  resolved "https://registry.yarnpkg.com/@octo-bot/telegram-bot/-/telegram-bot-1.0.7-alpha.0.tgz#ae61634c6482af214fd9483149700e9eeced1709"
+  integrity sha512-FaoNvel6dLJYPDNJj3IBFxINBp0ulMb3zrjZZ4b3G6d8b+7+qsLHlmEvRlIYdfRKKh6uJInosAHWYlxh40o9zg==
   dependencies:
-    "@octo-bot/core" "^1.0.6"
+    "@octo-bot/core" "^1.0.7-alpha.0"
     telegraf "^4.1.0"
 
-"@octo-bot/tomon-bot@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@octo-bot/tomon-bot/-/tomon-bot-1.0.6.tgz#3cb07f312cd778b1ac68c21ab5ff69bf08961a98"
-  integrity sha512-gjTHgBHiH5dstGcxgQ916ZVC3tHftdyzP4Th8WVjluUbK1ifubZmZYwtoYNV2lCgnb2DNOtNNmYil6bRF+xYAg==
+"@octo-bot/tomon-bot@^1.0.7-alpha":
+  version "1.0.7-alpha.0"
+  resolved "https://registry.yarnpkg.com/@octo-bot/tomon-bot/-/tomon-bot-1.0.7-alpha.0.tgz#d0963a220e8092d4a86f9155310841e34f5fa2de"
+  integrity sha512-zGVmRd7AiDEYtPeXA/UPr8QC4UuL57DDLStjrSnxn2ej7gqThZ5cVk7Yq8NU9Q9zYO4EhA256wNsAsiX8UFBJw==
   dependencies:
-    "@octo-bot/core" "^1.0.6"
+    "@octo-bot/core" "^1.0.7-alpha.0"
     tomon-sdk "^0.2.2"
 
 "@types/fs-extra@^9.0.8":
