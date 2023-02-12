@@ -1,11 +1,14 @@
+import dayjs from 'dayjs';
 import _ from 'lodash';
+
 import { BaseService } from '@octo-bot/core';
 import { Priv } from '@octo-bot/core/lib/types/IUser';
 
 import groupConfig from './mini-kancolle/assets/build-group';
 import dropConfig from './mini-kancolle/assets/drop';
-import rewardConfig, { RewardType } from './mini-kancolle/assets/reward';
 import nykConfigs from './mini-kancolle/assets/nyk';
+import rewardConfig, { RewardType } from './mini-kancolle/assets/reward';
+import shipsConfig from './mini-kancolle/assets/ships';
 import {
   ACTIONS,
   BUILD_RESOURCE_MAX,
@@ -14,10 +17,11 @@ import {
   MAX_HOME_LEVEL,
   NYK_INDEX,
   PREFIX,
-  ResourceType,
   RESOURCE_NAMES,
+  ResourceType,
 } from './mini-kancolle/constants';
 import store from './mini-kancolle/store';
+import Order, { OrderStatus } from './mini-kancolle/store/order';
 import User from './mini-kancolle/store/user';
 import {
   computeExtraWeight,
@@ -28,9 +32,6 @@ import {
   strip,
   weightBalance,
 } from './mini-kancolle/utils';
-import shipsConfig from './mini-kancolle/assets/ships';
-import dayjs from 'dayjs';
-import Order, { OrderStatus } from './mini-kancolle/store/order';
 
 export default class MiniService extends BaseService {
   public get params(): string[] {
@@ -205,7 +206,7 @@ export default class MiniService extends BaseService {
         }
       } catch (e) {
         this.bot.logger.warn(e);
-        return e.message;
+        return e?.message;
       }
     });
 
