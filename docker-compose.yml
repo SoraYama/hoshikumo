@@ -10,6 +10,8 @@ services:
     volumes:
       - db:/src/db
       - log:/src/log
+    depends_on:
+      - redis
   redis:
     image: redis:alpine
     container_name: 'hoshikumo-redis'
