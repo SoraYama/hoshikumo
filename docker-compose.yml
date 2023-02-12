@@ -10,6 +10,13 @@ services:
     volumes:
       - db:/src/db
       - log:/src/log
+  redis:
+    image: redis:alpine
+    container_name: 'hoshikumo-redis'
+    restart: always
+    volumes:
+        - redis-data:/data
 volumes:
   db:
   log:
+  redis-data:
