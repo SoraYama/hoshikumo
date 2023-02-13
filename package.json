@@ -2,7 +2,7 @@
   "name": "@octo-bot/app",
   "version": "1.0.3",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "ts-node src/index.ts --esm",
     "dev": "cross-env NODE_ENV=development ts-node-dev src/index.ts"
   },
   "private": true,

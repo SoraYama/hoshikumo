@@ -1,4 +1,5 @@
 import _ from 'lodash';
+
 import { BaseModule, Service, Trigger, TriggerMethod } from '@octo-bot/core';
 
 import { ACTIONS, helpText, PREFIX } from '../service/mini-kancolle/constants';
