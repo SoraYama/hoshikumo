@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 import { Configuration, OpenAIApi } from 'openai';
-import { remark } from 'remark';
 import stripMarkdown from 'strip-markdown';
 
 import { BaseModule, Trigger, TriggerMethod } from '@octo-bot/core';
@@ -30,6 +29,8 @@ class ChatGPTModule extends BaseModule {
         presence_penalty: 0.6,
         stop: [' Human:', ' AI:'],
       });
+
+      const { remark } = await import('remark');
 
       const content = remark()
         .use(stripMarkdown)
