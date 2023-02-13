@@ -3,6 +3,7 @@ version: '3'
 services:
   hoshikumo-bot:
     build: .
+    restart: always
     image: hoshikumo-bot
     container_name: 'hoshikumo-bot'
     ports:
@@ -18,6 +19,7 @@ services:
     restart: always
     volumes:
         - redis-data:/data
+
 volumes:
   db:
   log:

@@ -9,11 +9,11 @@ const openAIConfig = new Configuration({
 });
 const openAI = new OpenAIApi(openAIConfig);
 
-@Trigger('chat')
+@Trigger('/chat')
 class ChatGPTModule extends BaseModule {
   @Trigger({ match: 'ask', methods: [TriggerMethod.Prefix] })
   public async ask() {
-    const prompt = this.event.remain[0];
+    const prompt = this.event.params[0];
 
     const response = await openAI.createCompletion({
       model: 'text-davinci-003',
