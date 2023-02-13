@@ -14,8 +14,13 @@ class ChatGPTModule extends BaseModule {
   @Trigger({ match: 'ask', methods: [TriggerMethod.Prefix] })
   public async ask() {
     try {
-      const prompt = this.event.params[0];
+      const prompt = this.event.remain[1];
+
       this.bot.logger.info(`prompt - ${prompt}`);
+
+      if (!prompt) {
+        return;
+      }
 
       const response = await openAI.createCompletion({
         model: 'text-davinci-003',
@@ -28,16 +33,8 @@ class ChatGPTModule extends BaseModule {
         stop: [' Human:', ' AI:'],
       });
 
-      const { default: stripMarkdown } = await import('strip-markdown');
-      const { remark } = await import('remark');
-
-      const content = remark()
-        .use(stripMarkdown)
-        .processSync(response.data.choices?.[0].text ?? '')
-        .toString();
-
       this.event.reply({
-        content,
+        content: response.data.choices?.[0].text ?? '',
       });
     } catch (e) {
       this.bot.logger.error(e);
