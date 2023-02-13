@@ -18,6 +18,7 @@ class ChatGPTModule extends BaseModule {
     try {
       const prompt = this.event.params[0];
       this.bot.logger.info(`prompt - ${prompt}`);
+      console.log(`prompt - ${prompt}`);
 
       const response = await openAI.createCompletion({
         model: 'text-davinci-003',
