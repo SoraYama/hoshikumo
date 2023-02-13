@@ -1,5 +1,7 @@
 import dotenv from 'dotenv';
 import { Configuration, OpenAIApi } from 'openai';
+import { remark } from 'remark';
+import stripMarkdown from 'strip-markdown';
 
 import { BaseModule, Trigger, TriggerMethod } from '@octo-bot/core';
 
@@ -14,6 +16,7 @@ class ChatGPTModule extends BaseModule {
   @Trigger({ match: 'ask', methods: [TriggerMethod.Prefix] })
   public async ask() {
     const prompt = this.event.params[0];
+    this.bot.logger.info(`prompt - ${prompt}`);
 
     const response = await openAI.createCompletion({
       model: 'text-davinci-003',
@@ -26,7 +29,11 @@ class ChatGPTModule extends BaseModule {
       stop: [' Human:', ' AI:'],
     });
 
-    const content = response.data.choices?.[0].text;
+    const content = remark()
+      .use(stripMarkdown)
+      .processSync(response.data.choices?.[0].text ?? '')
+      .toString();
+
     this.event.reply({
       content,
     });
