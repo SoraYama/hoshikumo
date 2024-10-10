@@ -1,15 +1,38 @@
-version: '3'
+version: '3.8'
+
+networks:
+  hoshikumo-network:
+  external-network:
+    external: true
 
 services:
   hoshikumo-bot:
     build: .
     image: hoshikumo-bot
     container_name: 'hoshikumo-bot'
-    ports:
-      - '1551:1551'
+    networks:
+      - hoshikumo-network
+      - external-network
     volumes:
       - db:/src/db
       - logs:/src/logs
+    depends_on:
+      - redis
+
+  redis:
+    networks:
+      - hoshikumo-network
+    image: redis:latest
+    container_name: redis
+    restart: always
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./data:/data
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+      - ./logs:/logs
+    command: redis-server /usr/local/etc/redis/redis.conf
+
 volumes:
   db:
   logs:
