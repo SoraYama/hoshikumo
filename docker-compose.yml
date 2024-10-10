@@ -8,7 +8,6 @@ networks:
 services:
   hoshikumo-bot:
     build: .
-    image: hoshikumo-bot
     container_name: 'hoshikumo-bot'
     networks:
       - hoshikumo-network
@@ -17,7 +16,7 @@ services:
       - db:/src/db
       - logs:/src/logs
     depends_on:
-      - redis
+      - hoshikumo-redis
 
   hoshikumo-redis:
     networks:
