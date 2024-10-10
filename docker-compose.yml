@@ -19,11 +19,11 @@ services:
     depends_on:
       - redis
 
-  redis:
+  hoshikumo-redis:
     networks:
       - hoshikumo-network
     image: redis:latest
-    container_name: redis
+    container_name: hoshikumo-redis
     restart: always
     ports:
       - '6379:6379'
